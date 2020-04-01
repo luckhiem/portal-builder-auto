@@ -1,0 +1,8 @@
+###
+### Default mocha.opts
+###
+
+--require ts-node/register ./test/e2e/specs/**/*.e2e-spec.ts
+--timeout 900000
+--recursive
+--exit
