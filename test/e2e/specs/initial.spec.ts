@@ -17,9 +17,9 @@ describe("Initial test suite", () => {
     pages = new PageFactory().initPages(app);
   });
 
-  after(() => {
+  after(async () => {
     // close browser
-    utils.tearDown();
+    await utils.tearDown();
   });
 
   it("Verify widget list title", async () => {

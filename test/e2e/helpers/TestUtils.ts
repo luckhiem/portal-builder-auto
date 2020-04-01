@@ -12,7 +12,6 @@ export class TestUtils {
 
   public setUp() {
     // start application
-    console.log(this.baseDir);
     this.app = new Application({
       path: this.appPath,
       startTimeout: 50000,
@@ -22,11 +21,9 @@ export class TestUtils {
   }
 
   public tearDown() {
-    // close browser
-    // const windows = this.app.client.windowHandles() as any;
-    this.app.client.close();
-    // if (this.app && this.app.isRunning()) {
-    //   this.app.mainProcess.exit(0);
-    // }
+    // stop application
+    if (this.app && this.app.isRunning()) {
+      return this.app.stop()
+    }
   }
 }
