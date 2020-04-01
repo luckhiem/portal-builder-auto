@@ -1,4 +1,4 @@
-# spectron-typescript-starter
+# spectron-demo
 Spectron Demo for e2e testing electron applications.
 
 Supports:
