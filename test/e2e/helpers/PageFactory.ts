@@ -1,19 +1,21 @@
 import { Application } from "spectron";
 
-import { InitialPage } from "../po/initial.po";
+import { WidgetList } from "../po/WidgetList.po";
+import { TabAdd } from "../po/TabAdd.po";
 
 export interface Pages {
-  initialPage: InitialPage;
+  WidgetList: WidgetList;
+  TabAdd: TabAdd;
 }
 
-
 export class PageFactory implements Pages {
-
-  public initialPage: InitialPage;
+  public WidgetList: WidgetList;
+  public TabAdd: TabAdd;
 
   public initPages(app: Application) {
     return {
-     initialPage: new InitialPage(app),
+      WidgetList: new WidgetList(app),
+      TabAdd: new TabAdd(app),
     };
   }
 }

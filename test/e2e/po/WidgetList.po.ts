@@ -1,7 +1,7 @@
 import log from "../helpers/LoggerDecorator";
-import { Helpers } from "./../helpers/Helpers";
+import { Helpers } from "../helpers/Helpers";
 
-export class InitialPage extends Helpers {
+export class WidgetList extends Helpers {
 
   // locators
   private headerTextLocator = ".ant-card-head-title";
@@ -11,6 +11,5 @@ export class InitialPage extends Helpers {
   public async getWidgetListTitle() {
     return await this.getText(this.headerTextLocator);
   }
-
 }
 

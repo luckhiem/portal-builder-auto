@@ -23,7 +23,11 @@ describe("Initial test suite", () => {
   });
 
   it("Verify widget list title", async () => {
-    const result = await pages.initialPage.getWidgetListTitle();
+    return await pages.TabAdd.addTab();
+  });
+
+  it("Verify widget list title", async () => {
+    const result = await pages.WidgetList.getWidgetListTitle();
     expect(result).to.equals("Default Widget");
   });
 });
