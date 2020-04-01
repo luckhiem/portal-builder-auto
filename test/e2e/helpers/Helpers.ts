@@ -38,9 +38,10 @@ export class Helpers {
   @log
   protected async getAttribute(element, attrName): Promise<any> {
     await this.waitForExist(element);
-    return await this.app.client.getAttribute(element, attrName).then(attr => {
-      return attr;
-    });
+    return await this.app.client.getAttribute(element, attrName)
+      .then(attr => {
+        return attr;
+      });
   }
 
   @log

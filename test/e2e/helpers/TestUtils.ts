@@ -1,4 +1,3 @@
-import * as electron from "electron";
 import { Application } from "spectron";
 import * as path from 'path';
 
@@ -15,8 +14,6 @@ export class TestUtils {
     // start application
     console.log(this.baseDir);
     this.app = new Application({
-      // path to electron app
-      // args: [this.baseDir],
       path: this.appPath,
       startTimeout: 50000,
       waitTimeout: 50000,
@@ -26,7 +23,10 @@ export class TestUtils {
 
   public tearDown() {
     // close browser
-    const windows = this.app.client.windowHandles() as any;
-    this.app.client.close(windows.sessionId);
+    // const windows = this.app.client.windowHandles() as any;
+    this.app.client.close();
+    // if (this.app && this.app.isRunning()) {
+    //   this.app.mainProcess.exit(0);
+    // }
   }
 }

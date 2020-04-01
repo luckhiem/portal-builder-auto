@@ -7,7 +7,6 @@ export class InitialPage extends Helpers {
   private headerTextLocator = ".ant-card-head-title";
 
   // methods
-
   @log
   public async getWidgetListTitle() {
     return await this.getText(this.headerTextLocator);
