@@ -1,8 +1,0 @@
-###
-### Default mocha.opts
-###
-
---require ts-node/register ./test/e2e/specs/**/addingWidget.spec.ts
---timeout 900000
---recursive
---exit

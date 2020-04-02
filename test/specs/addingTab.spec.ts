@@ -5,11 +5,10 @@ import { TestUtils } from "../helpers/TestUtils";
 describe("Verify can adding tab normaly", () => {
 
   let pages: Pages;
-  let utils;
+  let utils = new TestUtils();
   let app: Application;
 
   before(async () => {
-    utils = new TestUtils();
     app = await utils.setUp();
     pages = new PageFactory().initPages(app);
   });
@@ -20,6 +19,6 @@ describe("Verify can adding tab normaly", () => {
 
   it("Verify can adding tab normaly", async () => {
     await pages.TabAdd.addTab();
-    return await app.client.pause(10000)
+    return await app.client.pause(5000)
   });
 });

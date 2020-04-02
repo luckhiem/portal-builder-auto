@@ -4,8 +4,8 @@
   "description": "Spectron TypeScript Starter for testing Electron application written with Typescript",
   "scripts": {
     "lint": "tslint -c tslint.json -p tsconfig.json",
-    "test": "./node_modules/.bin/_mocha --opts ./test/e2e/mocha.opts",
-    "test:allure": "./node_modules/.bin/_mocha --opts ./test/e2e/mocha-allure.opts",
+    "test": "./node_modules/.bin/_mocha --opts ./test/mocha.opts",
+    "test:allure": "./node_modules/.bin/_mocha --opts ./test/mocha-allure.opts",
     "clean": "rimraf node_modules dist",
     "report:clean": "rimraf allure*",
     "report:generate": "allure generate allure-results --clean -o allure-report",
