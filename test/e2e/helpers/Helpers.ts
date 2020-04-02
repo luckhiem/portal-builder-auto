@@ -17,6 +17,30 @@ export class Helpers {
   }
 
   @log
+  protected async dragAndDrop(sourceElement, destinationElement) {
+    await this.waitForExist(sourceElement);
+    await this.waitForExist(destinationElement);
+    await this.app.client.dragAndDrop(sourceElement, destinationElement)
+  }
+
+  @log
+  protected async moveToObject(element) {
+    await this.waitForExist(element);
+    await this.app.client.moveToObject(element)
+  }
+
+
+  @log
+  protected async buttonDown() {
+    await this.app.client.buttonDown()
+  }
+
+  @log
+  protected async buttonUp() {
+    await this.app.client.buttonUp()
+  }
+
+  @log
   protected async setValue(element, text: string) {
     await this.waitForExist(element);
     await this.app.client.clearElement(element);
@@ -38,10 +62,9 @@ export class Helpers {
   @log
   protected async getAttribute(element, attrName): Promise<any> {
     await this.waitForExist(element);
-    return await this.app.client.getAttribute(element, attrName)
-      .then(attr => {
-        return attr;
-      });
+    return await (this.app.client.getAttribute(element, attrName) as any).then(attr => {
+      return attr;
+    });
   }
 
   @log

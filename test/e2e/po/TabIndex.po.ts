@@ -3,7 +3,7 @@ import { Helpers } from "../helpers/Helpers";
 import { expect } from "chai";
 
 
-export class TabAdd extends Helpers {
+export class TabIndex extends Helpers {
 
   // locators
   private ADD_TAB_BTN = ".portal-tabs-btn-add";
