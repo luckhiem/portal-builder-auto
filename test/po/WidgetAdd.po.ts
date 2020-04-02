@@ -1,6 +1,8 @@
 import log from "../helpers/LoggerDecorator";
+import * as fs from 'fs';
 import { Helpers } from "../helpers/Helpers";
 import { expect } from "chai";
+import Config from '../helpers/Config';
 
 
 export class WidgetAdd extends Helpers {
@@ -12,7 +14,7 @@ export class WidgetAdd extends Helpers {
   private MODAL_INPUT = ".ant-modal-content .ant-input";
   private MODAL_SAVE_BTN = ".ant-modal-content .ant-btn-primary";
   private TAB_SELECTED = ".kuc-tabs-container-selection";
-  IFRAME_URL: string = "https://vnexpress.net"
+  IFRAME_URL: string = "https://vnexpress.net";
 
   // methods
   @log
@@ -46,7 +48,8 @@ export class WidgetAdd extends Helpers {
   // methods
   @log
   private async inputHTML() {
-    return await this.setValue(this.MODAL_INPUT, this.IFRAME_URL)
+    let data = await fs.readFileSync(Config.HTMLFilePath, 'utf8');
+    return await this.setValue(this.MODAL_INPUT, data.toString())
   }
 
   // methods

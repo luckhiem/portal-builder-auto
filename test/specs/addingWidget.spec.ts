@@ -17,9 +17,15 @@ describe("Verify can adding widget normaly", async () => {
     await utils.tearDown();
   });
 
-  it("Verify can adding widget normaly", async () => {
+  // it("Verify can adding Iframe widget normaly", async () => {
+  //   await pages.TabAdd.addTab();
+  //   await pages.WidgetAdd.addIframeWidget();
+  //   return await app.client.pause(5000)
+  // });
+
+  it("Verify can adding HTML widget normaly", async () => {
     await pages.TabAdd.addTab();
-    await pages.WidgetAdd.addIframeWidget();
+    await pages.WidgetAdd.addHTMLWidget();
     return await app.client.pause(5000)
   });
 });
