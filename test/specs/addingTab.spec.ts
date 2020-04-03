@@ -21,4 +21,14 @@ describe("Verify can adding tab normaly", () => {
     await pages.TabAdd.addTab();
     return await app.client.pause(5000)
   });
+
+  it("Verify can adding tab normaly", async () => {
+    await pages.TabAdd.addTab();
+    return await app.client.pause(5000)
+  });
+
+  it("Verify can adding tab normaly", async () => {
+    await pages.TabAdd.addTab();
+    return await app.client.pause(5000)
+  });
 });
