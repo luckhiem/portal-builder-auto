@@ -32,7 +32,7 @@ export class WidgetAdd extends Helpers {
     await this.buttonDown();
     await this.dragAndDrop(this.WIDGET_IFRAME, this.TAB_CONTENT);
     await this.buttonUp();
-    return await this.app.client.pause(1000)
+    return await this.app.client.pause(3000)
   }
 
   // methods
@@ -42,20 +42,20 @@ export class WidgetAdd extends Helpers {
     await this.buttonDown();
     await this.dragAndDrop(this.WIDGET_HTML, this.TAB_CONTENT);
     await this.buttonUp();
-    return await this.app.client.pause(1000)
+    return await this.app.client.pause(3000)
   }
 
   // methods
   @log
   private async inputHTML() {
     let data = await fs.readFileSync(Config.HTMLFilePath, 'utf8');
-    return await this.setValue(this.MODAL_INPUT, data.toString())
+    return await this.addValue(this.MODAL_INPUT, data.toString())
   }
 
   // methods
   @log
   private async inputIframeURL() {
-    return await this.setValue(this.MODAL_INPUT, this.IFRAME_URL)
+    return await this.addValue(this.MODAL_INPUT, this.IFRAME_URL)
   }
 
   // methods

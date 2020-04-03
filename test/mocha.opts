@@ -2,7 +2,7 @@
 ### Default mocha.opts
 ###
 
---require ts-node/register ./test/specs/**/addingWidget.spec.ts
+--require ts-node/register ./test/specs/**/addingHTMLWidget.spec.ts
 --timeout 900000
 --recursive
 --exit

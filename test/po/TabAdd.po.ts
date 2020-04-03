@@ -21,7 +21,7 @@ export class TabAdd extends Helpers {
   // methods
   @log
   private async inputTabName() {
-    return await this.setValue(this.TAB_NAME_INPUT, this.TAB_NAME);
+    return await this.addValue(this.TAB_NAME_INPUT, this.TAB_NAME);
   }
 
   // methods

@@ -43,8 +43,16 @@ export class Helpers {
   @log
   protected async setValue(element, text: string) {
     await this.waitForExist(element);
+    await this.waitForPresence(element);
     await this.app.client.clearElement(element);
     await this.app.client.setValue(element, text);
+  }
+
+  @log
+  protected async addValue(element, text: string) {
+    await this.waitForExist(element);
+    await this.waitForPresence(element);
+    return await this.app.client.addValue(element, text);
   }
 
   @log
