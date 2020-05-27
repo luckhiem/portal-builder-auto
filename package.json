@@ -1,37 +1,22 @@
 {
-  "name": "spectron-demo",
+  "name": "portal-builder",
   "version": "1.0.0",
-  "description": "Spectron TypeScript Starter for testing Electron application written with Typescript",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "lint": "tslint -c tslint.json -p tsconfig.json",
-    "test": "./node_modules/.bin/_mocha --opts ./test/mocha.opts",
-    "test:allure": "./node_modules/.bin/_mocha --opts ./test/mocha-allure.opts",
-    "clean": "rimraf node_modules dist",
-    "report:clean": "rimraf allure*",
-    "report:generate": "allure generate allure-results --clean -o allure-report",
-    "report:generate:open": "allure generate allure-results --clean -o allure-report && allure open allure-report"
+    "test": "./node_modules/.bin/_mocha --opts ./src/mocha.opts",
+    "debug": "./node_modules/.bin/_mocha --opts ./src/mocha.opts --inspect-brk"
   },
-  "keywords": [
-    "Spectron",
-    "demo",
-    "typescript"
-  ],
-  "author": "Khiem Luc",
-  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "@types/chai": "^4.1.5",
-    "@types/es6-promise": "^3.3.0",
-    "@types/mocha": "^5.2.5",
-    "@types/webdriverio": "^4.13.3",
     "axios": "^0.19.2",
     "chai": "^4.2.0",
-    "electron": "*",
+    "chai-as-promised": "^7.1.1",
     "mocha": "^5.2.0",
     "mocha-allure-reporter": "^1.4.0",
     "rimraf": "^2.6.2",
-    "spectron": "*",
-    "ts-node": "^7.0.1",
-    "tslint": "^5.11.0",
-    "typescript": "^2.9.2"
+    "spectron": "^10.0.1"
   }
 }

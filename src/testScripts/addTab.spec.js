@@ -1,34 +1,38 @@
-import { Application } from "spectron";
-import { PageFactory, Pages } from "../helpers/PageFactory";
-import { TestUtils } from "../helpers/TestUtils";
+const TestUtils = require('../helpers/TestUltils.js');
+const PageFactory = require('../po/PageFactory');
 
 describe("Verify can adding tab normaly", () => {
-
-  let pages: Pages;
-  let utils = new TestUtils();
-  let app: Application;
+  let app;
+  let pages;
 
   before(async () => {
-    app = await utils.setUp();
-    pages = new PageFactory().initPages(app);
+    app = await TestUtils.setUp();
+    pages = PageFactory.initPage(app)
+  });
+
+  beforeEach(async () => {
+    await pages.WidgetAdd.refreshTabSelected();
   });
 
   after(async () => {
-    await utils.tearDown();
+    await TestUtils.tearDown();
   });
 
   it("Verify can adding tab normaly", async () => {
     await pages.TabAdd.addTab();
+    await pages.WidgetAdd.addIframeWidget();
     return await app.client.pause(5000)
   });
 
   it("Verify can adding tab normaly", async () => {
     await pages.TabAdd.addTab();
+    await pages.WidgetAdd.addIframeWidget();
     return await app.client.pause(5000)
   });
 
   it("Verify can adding tab normaly", async () => {
     await pages.TabAdd.addTab();
+    await pages.WidgetAdd.addIframeWidget();
     return await app.client.pause(5000)
   });
 });
